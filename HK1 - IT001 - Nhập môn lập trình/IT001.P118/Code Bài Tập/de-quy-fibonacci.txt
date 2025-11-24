@@ -1,0 +1,27 @@
+Đề:  Dãy Fibonacci là một dãy số được định nghĩa như sau:
+ 	F1 = 1
+ 	F2 = 1
+ 	Fn =(Fn−1 +Fn−2) (n ≥ 3)
+     Cho số nguyên dương n, hãy tính Fn ?
+
+Testcase: 
+	+Input: 3 | Output: 2 |
+Code:
+------------------------------------------------------------------------
+
+#include <iostream>
+using namespace std;
+int fibo(int a){
+    if (a<=2){
+        return 1;
+    }else{
+        return fibo(a-1)+fibo(a-2);
+    }
+}
+int main() {
+    int a;
+    cin>>a;
+    cout<<fibo(a)<<endl;
+}
+
+------------------------------------------------------------------------

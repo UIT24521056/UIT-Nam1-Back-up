@@ -1,0 +1,43 @@
+Đề: Viết chương trình nhập vào số nguyên x sao cho 1 ≤ x ≤ 30. Nếu x không thỏa điều kiện, chương trình xuất ra màn hình thông báo “So <x> khong nam trong khoang [1,30].”. Nếu x nằm trong khoảng [1,30], chương trình xuất ra màn hình số Fibonacci thứ x
+
+Testcase: 
+	+Input: 6 | Output: 17 |
+	+Input: -6 | Output: So -6 khong nam trong khoang [1,30] |
+Code:
+------------------------------------------------------------------------
+
+#include <iostream>
+using namespace std;
+
+int SoFibonacci(int x){
+    int truoc= 1;
+    int sau =1;
+    int phuluu;
+    switch(x){
+        case 1:sau=1;break;
+        case 2:sau=1;break;
+        case 3:sau=2;break;
+        defaul:break;
+    }
+    if(x>3){
+        for(int i=3;i<=x;i++){
+            phuluu= truoc;
+            truoc=sau;
+            sau=phuluu+sau;
+        }
+    }
+    return sau;
+}
+
+int main(){
+    int x;
+    cin>>x;
+    if(x<1||>30){
+        cout<<"So "<<x<<" khong nam trong khoang [1,30]"<<endl;
+    }else{
+        cout<<SoFibonacci(x)<<endl;
+    }
+    return 0;
+}
+
+------------------------------------------------------------------------

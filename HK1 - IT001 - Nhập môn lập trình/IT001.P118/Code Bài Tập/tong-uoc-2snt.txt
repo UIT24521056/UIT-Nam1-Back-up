@@ -1,0 +1,44 @@
+Đề: Viết hàm tính tổng tất cả các ước số nguyên tố chung của 2 số nguyên dương N và M. Nếu không có ước nguyên tố chung nào thì trả về -1
+
+Testcase: 
+	+Input: 20 30 | Output: 7 | Giải thích: Ước số nguyên tố chung của 30 và 20: 2, 5
+	+Input: 17 34 | Output: 17 | Giải thích: Ước số nguyên tố chung của 17 và 34: 17
+	+Input: 101 67 | Output: -1 | Giải thích: Ước số nguyên tố chung của 101 và 67: không có
+Code:
+------------------------------------------------------------------------
+
+#include <iostream>
+using namespace std;
+
+int sum_common_prime(int m, int n){
+    int kq=0;
+    while (m!=n){
+        if(m>n) m=m-n;
+        else n=n-m;
+    }
+    if (n<=1){
+        kq=-1;
+    }else if(n<4){
+        kq=n;
+    }else{
+        for (int i=2;i*i<=n;i++){
+            if (n%i==0) {
+                kq=kq + i;
+                while (n%i==0) {
+                    n=n/i;
+                }
+            }
+        }
+        if(n>1) kq=kq+n;
+    }
+    return kq;
+}
+
+int main(){
+    int m,n;
+    cin>>m>>n;
+    cout<<sum_common_prime(m, n)<<endl;
+    return 0;
+}
+
+------------------------------------------------------------------------

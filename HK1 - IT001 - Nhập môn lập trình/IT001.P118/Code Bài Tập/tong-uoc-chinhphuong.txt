@@ -1,0 +1,31 @@
+Đề: Viết hàm tính tổng tất cả các ước số chính phương của một số nguyên dương N
+
+Testcase: 
+	+Input: 8 | Output: 5 | Giải thích: Ước số có dạng chính phương của 8 là: 1, 4
+	+Input: 17 | Output: 1 | Giải thích: Ước số có dạng chính phương của 17 là: 1
+Code:
+------------------------------------------------------------------------
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int sum_all_square(int n){
+    int m;
+    m=0;
+    for (int i=1; i<n+1; i++){
+        if(n%i==0 && sqrt(i)==floor(sqrt(i))){
+            m=m+i;
+        }
+    }
+    return m;
+}
+
+int main(){
+    int n;
+    cin>>n;
+    cout<<sum_all_square(n)<<endl;
+    return 0;
+}
+
+------------------------------------------------------------------------
